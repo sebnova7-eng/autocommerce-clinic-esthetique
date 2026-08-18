@@ -1,0 +1,102 @@
+{
+  "common": {
+    "welcome": "Willkommen",
+    "logout": "Abmelden",
+    "login": "Anmelden",
+    "dashboard": "Dashboard",
+    "patients": "Patienten",
+    "agenda": "Terminkalender",
+    "stock": "Bestand",
+    "invoices": "Rechnungen",
+    "settings": "Einstellungen",
+    "language": "Sprache",
+    "french": "Französisch",
+    "english": "Englisch",
+    "italian": "Italienisch",
+    "german": "Deutsch"
+  },
+  "auth": {
+    "email": "E-Mail",
+    "password": "Passwort",
+    "loginButton": "Anmelden",
+    "forgotPassword": "Passwort vergessen",
+    "rememberMe": "Angemeldet bleiben",
+    "mfaRequired": "Zwei-Faktor-Authentifizierung erforderlich",
+    "mfaCode": "Authentifizierungscode"
+  },
+  "patients": {
+    "title": "Patientenverwaltung",
+    "addPatient": "Patient hinzufügen",
+    "editPatient": "Patient bearbeiten",
+    "deletePatient": "Patient löschen",
+    "name": "Nachname",
+    "firstName": "Vorname",
+    "phone": "Telefon",
+    "email": "E-Mail",
+    "city": "Stadt",
+    "loyaltyPoints": "Treuepunkte",
+    "loyaltyLevel": "Treueprogramm-Stufe",
+    "medicalFile": "Patientenakte",
+    "consent": "Zustimmung",
+    "photos": "Fotos"
+  },
+  "agenda": {
+    "title": "Terminkalender",
+    "appointment": "Termin",
+    "practitioner": "Arzt",
+    "date": "Datum",
+    "time": "Uhrzeit",
+    "duration": "Dauer",
+    "room": "Raum",
+    "bookAppointment": "Termin buchen",
+    "cancelAppointment": "Termin absagen",
+    "reschedule": "Neu planen"
+  },
+  "stock": {
+    "title": "Bestandsverwaltung",
+    "product": "Produkt",
+    "quantity": "Menge",
+    "expiryDate": "Verfallsdatum",
+    "alert": "Warnung",
+    "scanBarcode": "Barcode scannen",
+    "addProduct": "Produkt hinzufügen",
+    "lowStock": "Niedriger Bestand",
+    "expiringSoon": "Läuft bald ab"
+  },
+  "invoices": {
+    "title": "Rechnungen",
+    "invoiceNumber": "Rechnungsnummer",
+    "date": "Datum",
+    "amount": "Betrag",
+    "status": "Status",
+    "paid": "Bezahlt",
+    "pending": "Ausstehend",
+    "cancelled": "Storniert",
+    "generateInvoice": "Rechnung erstellen"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "overview": "Übersicht",
+    "revenue": "Umsatz",
+    "appointments": "Termine",
+    "patients": "Patienten",
+    "performance": "Leistung"
+  },
+  "simulation": {
+    "title": "KI-Morphing-Simulation",
+    "selectPhoto": "Foto auswählen",
+    "selectZone": "Zone auswählen",
+    "intensity": "Intensität",
+    "generate": "Generieren",
+    "disclaimer": "Unverbindliche Simulation"
+  },
+  "messages": {
+    "success": "Operation erfolgreich",
+    "error": "Ein Fehler ist aufgetreten",
+    "loading": "Wird geladen...",
+    "confirm": "Sind Sie sicher?",
+    "cancel": "Abbrechen",
+    "save": "Speichern",
+    "delete": "Löschen"
+  }
+}

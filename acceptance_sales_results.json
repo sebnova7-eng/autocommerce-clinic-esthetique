@@ -1,0 +1,441 @@
+{
+  "api": "https://8000-i9wwsncwhxbph491lqyuf-576a1e30.us2.manus.computer",
+  "passed": 46,
+  "total": 50,
+  "failed": [
+    {
+      "name": "medecin_/factures",
+      "status": 200,
+      "expected": 403,
+      "ok": false,
+      "note": "",
+      "body": "[]"
+    },
+    {
+      "name": "estheticienne_/factures",
+      "status": 200,
+      "expected": 403,
+      "ok": false,
+      "note": "",
+      "body": "[]"
+    },
+    {
+      "name": "estheticienne_/patients/1/dossiers",
+      "status": 200,
+      "expected": 403,
+      "ok": false,
+      "note": "",
+      "body": "[]"
+    },
+    {
+      "name": "create_invoice",
+      "status": 500,
+      "expected": 201,
+      "ok": false,
+      "note": "",
+      "body": "<!doctype html>\n<html lang=\"en\">\n\n<head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Manus Sandbox</title>\n    <style>\n        html,\n        body {\n            margin: 0;\n            padding: 0;\n            width: 100%;\n            height: 100%;\n        }\n\n        h2,\n        p {\n            margin: 0;\n            padding: 0;\n        }\n    </style>\n</head>\n\n<body>\n    <div style=\"\n        width: 100%;\n        height: 100%;\n        display: flex;\n        flex-direction: column;\n        justify-content: center;\n        alig"
+    }
+  ],
+  "results": [
+    {
+      "name": "public_praticiens",
+      "status": 200,
+      "expected": null,
+      "ok": true,
+      "note": "",
+      "body": "[{\"id\":4,\"nom\":\"Esthéticienne\",\"prenom\":\"Demo\",\"nom_complet\":\"Demo Esthéticienne\",\"specialite\":\"Soins esthétiques\",\"agenda_color\":\"#EC4899\"},{\"id\":3,\"nom\":\"Médecin\",\"prenom\":\"Demo\",\"nom_complet\":\"Demo Médecin\",\"specialite\":\"Médecine esthétique\",\"agenda_color\":\"#8B5CF6\"}]"
+    },
+    {
+      "name": "public_actes",
+      "status": 200,
+      "expected": null,
+      "ok": true,
+      "note": "",
+      "body": "[{\"id\":1,\"nom\":\"Consultation esthétique\",\"categorie\":\"consultation\",\"duree_minutes\":45,\"description\":\"Évaluation personnalisée et plan de soins esthétique.\",\"prix_base\":80.0},{\"id\":4,\"nom\":\"Injection esthétique\",\"categorie\":\"injectable\",\"duree_minutes\":30,\"description\":\"Acte esthétique réalisé après consultation médicale et consentement.\",\"prix_base\":250.0},{\"id\":5,\"nom\":\"Laser esthétique\",\"categorie\":\"laser\",\"duree_minutes\":45,\"description\":\"Séance laser selon indication et protocole validé.\",\"prix_base\":220.0},{\"id\":2,\"nom\":\"Peeling nouvelle génération\",\"categorie\":\"soin_visage\",\"duree_minut"
+    },
+    {
+      "name": "login_admin",
+      "status": 200,
+      "expected": null,
+      "ok": true,
+      "note": "",
+      "body": "{\"access_token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxIiwiZW1haWwiOiJhZG1pbi5kZW1vQGNsaW5pcXVlLWVzdGhldGlxdWUubG9jYWwiLCJyb2xlIjoiYWRtaW4iLCJjbGluaWNfaWQiOjEsIm5vbSI6IkFkbWluIiwicHJlbm9tIjoiRGVtbyIsImlzX2FjdGl2ZSI6dHJ1ZSwidHlwZSI6ImFjY2VzcyIsImV4cCI6MTc4NzA1MjY2M30.d4aEYG3Vzgsr6UYYCPQwOXRlx603104qa3oY63-6wgU\",\"token_type\":\"bearer\",\"expires_in\":1800}"
+    },
+    {
+      "name": "me_admin",
+      "status": 200,
+      "expected": null,
+      "ok": true,
+      "note": "",
+      "body": "{\"id\":1,\"email\":\"admin.demo@clinique-esthetique.local\",\"nom\":\"Admin\",\"prenom\":\"Demo\",\"role\":\"admin\",\"telephone\":\"+21670000000\",\"specialite\":\"Administrateur plateforme\"}"
+    },
+    {
+      "name": "login_directrice",
+      "status": 200,
+      "expected": null,
+      "ok": true,
+      "note": "",
+      "body": "{\"access_token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyIiwiZW1haWwiOiJkaXJlY3Rpb24uZGVtb0BjbGluaXF1ZS1lc3RoZXRpcXVlLmxvY2FsIiwicm9sZSI6ImRpcmVjdHJpY2UiLCJjbGluaWNfaWQiOjEsIm5vbSI6IkRpcmVjdGlvbiIsInByZW5vbSI6IkRlbW8iLCJpc19hY3RpdmUiOnRydWUsInR5cGUiOiJhY2Nlc3MiLCJleHAiOjE3ODcwNTI2NjR9.bScbYlYO73_JO1El5pOuG99DmTbY8mTi9MqA0s-snsI\",\"token_type\":\"bearer\",\"expires_in\":1800}"
+    },
+    {
+      "name": "me_directrice",
+      "status": 200,
+      "expected": null,
+      "ok": true,
+      "note": "",
+      "body": "{\"id\":2,\"email\":\"direction.demo@clinique-esthetique.local\",\"nom\":\"Direction\",\"prenom\":\"Demo\",\"role\":\"directrice\",\"telephone\":\"+21670000000\",\"specialite\":\"Direction de clinique\"}"
+    },
+    {
+      "name": "login_medecin",
+      "status": 200,
+      "expected": null,
+      "ok": true,
+      "note": "",
+      "body": "{\"access_token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzIiwiZW1haWwiOiJtZWRlY2luLmRlbW9AY2xpbmlxdWUtZXN0aGV0aXF1ZS5sb2NhbCIsInJvbGUiOiJtZWRlY2luIiwiY2xpbmljX2lkIjoxLCJub20iOiJNXHUwMGU5ZGVjaW4iLCJwcmVub20iOiJEZW1vIiwiaXNfYWN0aXZlIjp0cnVlLCJ0eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzg3MDUyNjY0fQ.2Zu-cxmLt5HPN-JN4blVsqaSyoDMKsxuflEGYkXJjDg\",\"token_type\":\"bearer\",\"expires_in\":1800}"
+    },
+    {
+      "name": "me_medecin",
+      "status": 200,
+      "expected": null,
+      "ok": true,
+      "note": "",
+      "body": "{\"id\":3,\"email\":\"medecin.demo@clinique-esthetique.local\",\"nom\":\"Médecin\",\"prenom\":\"Demo\",\"role\":\"medecin\",\"telephone\":\"+21670000000\",\"specialite\":\"Médecine esthétique\"}"
+    },
+    {
+      "name": "login_estheticienne",
+      "status": 200,
+      "expected": null,
+      "ok": true,
+      "note": "",
+      "body": "{\"access_token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI0IiwiZW1haWwiOiJlc3RoZXRpY2llbm5lLmRlbW9AY2xpbmlxdWUtZXN0aGV0aXF1ZS5sb2NhbCIsInJvbGUiOiJlc3RoZXRpY2llbm5lIiwiY2xpbmljX2lkIjoxLCJub20iOiJFc3RoXHUwMGU5dGljaWVubmUiLCJwcmVub20iOiJEZW1vIiwiaXNfYWN0aXZlIjp0cnVlLCJ0eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzg3MDUyNjY0fQ.qbzmZNVdUnWDGwWPWrXJTGvhz39GUI0TmutWfbRqeno\",\"token_type\":\"bearer\",\"expires_in\":1800}"
+    },
+    {
+      "name": "me_estheticienne",
+      "status": 200,
+      "expected": null,
+      "ok": true,
+      "note": "",
+      "body": "{\"id\":4,\"email\":\"estheticienne.demo@clinique-esthetique.local\",\"nom\":\"Esthéticienne\",\"prenom\":\"Demo\",\"role\":\"estheticienne\",\"telephone\":\"+21670000000\",\"specialite\":\"Soins esthétiques\"}"
+    },
+    {
+      "name": "login_assistante",
+      "status": 200,
+      "expected": null,
+      "ok": true,
+      "note": "",
+      "body": "{\"access_token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1IiwiZW1haWwiOiJhc3Npc3RhbnRlLmRlbW9AY2xpbmlxdWUtZXN0aGV0aXF1ZS5sb2NhbCIsInJvbGUiOiJhc3Npc3RhbnRlIiwiY2xpbmljX2lkIjoxLCJub20iOiJBc3Npc3RhbnRlIiwicHJlbm9tIjoiRGVtbyIsImlzX2FjdGl2ZSI6dHJ1ZSwidHlwZSI6ImFjY2VzcyIsImV4cCI6MTc4NzA1MjY2NX0.tD7jGptQo0juARdlhbvAbsG4ynLy29OV1EgnnCqSTgM\",\"token_type\":\"bearer\",\"expires_in\":1800}"
+    },
+    {
+      "name": "me_assistante",
+      "status": 200,
+      "expected": null,
+      "ok": true,
+      "note": "",
+      "body": "{\"id\":5,\"email\":\"assistante.demo@clinique-esthetique.local\",\"nom\":\"Assistante\",\"prenom\":\"Demo\",\"role\":\"assistante\",\"telephone\":\"+21670000000\",\"specialite\":\"Accueil et coordination\"}"
+    },
+    {
+      "name": "login_commercial",
+      "status": 200,
+      "expected": null,
+      "ok": true,
+      "note": "",
+      "body": "{\"access_token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2IiwiZW1haWwiOiJjb21tZXJjaWFsLmRlbW9AY2xpbmlxdWUtZXN0aGV0aXF1ZS5sb2NhbCIsInJvbGUiOiJjb21tZXJjaWFsIiwiY2xpbmljX2lkIjoxLCJub20iOiJDb21tZXJjaWFsIiwicHJlbm9tIjoiRGVtbyIsImlzX2FjdGl2ZSI6dHJ1ZSwidHlwZSI6ImFjY2VzcyIsImV4cCI6MTc4NzA1MjcyNn0.o4aJmrbUuaDS5_DzQAFOS5gYC6vSpEIs1c0V4UEZE3M\",\"token_type\":\"bearer\",\"expires_in\":1800}"
+    },
+    {
+      "name": "me_commercial",
+      "status": 200,
+      "expected": null,
+      "ok": true,
+      "note": "",
+      "body": "{\"id\":6,\"email\":\"commercial.demo@clinique-esthetique.local\",\"nom\":\"Commercial\",\"prenom\":\"Demo\",\"role\":\"commercial\",\"telephone\":\"+21670000000\",\"specialite\":\"Relation patient\"}"
+    },
+    {
+      "name": "admin_/agenda",
+      "status": 200,
+      "expected": 200,
+      "ok": true,
+      "note": "",
+      "body": "[]"
+    },
+    {
+      "name": "admin_/patients",
+      "status": 200,
+      "expected": 200,
+      "ok": true,
+      "note": "",
+      "body": "[]"
+    },
+    {
+      "name": "admin_/factures",
+      "status": 200,
+      "expected": 200,
+      "ok": true,
+      "note": "",
+      "body": "[]"
+    },
+    {
+      "name": "admin_/injectables/stock",
+      "status": 200,
+      "expected": 200,
+      "ok": true,
+      "note": "",
+      "body": "{\"produits\":[],\"alertes\":{\"rouge\":[],\"orange\":[],\"vert\":[]},\"total_alertes\":0}"
+    },
+    {
+      "name": "admin_/omnicanal/health",
+      "status": 200,
+      "expected": 200,
+      "ok": true,
+      "note": "",
+      "body": "[{\"channel\":\"whatsapp\",\"enabled\":true,\"configured\":false,\"status\":\"non_configure\",\"last_error_at\":null},{\"channel\":\"instagram\",\"enabled\":false,\"configured\":true,\"status\":\"desactive\",\"last_error_at\":null},{\"channel\":\"facebook\",\"enabled\":false,\"configured\":true,\"status\":\"desactive\",\"last_error_at\":null},{\"channel\":\"tiktok\",\"enabled\":false,\"configured\":true,\"status\":\"desactive\",\"last_error_at\":null},{\"channel\":\"email\",\"enabled\":true,\"configured\":false,\"status\":\"non_configure\",\"last_error_at\":null},{\"channel\":\"sms\",\"enabled\":true,\"configured\":false,\"status\":\"non_configure\",\"last_error_at\":null}]"
+    },
+    {
+      "name": "directrice_/agenda",
+      "status": 200,
+      "expected": 200,
+      "ok": true,
+      "note": "",
+      "body": "[]"
+    },
+    {
+      "name": "directrice_/patients",
+      "status": 200,
+      "expected": 200,
+      "ok": true,
+      "note": "",
+      "body": "[]"
+    },
+    {
+      "name": "directrice_/factures",
+      "status": 200,
+      "expected": 200,
+      "ok": true,
+      "note": "",
+      "body": "[]"
+    },
+    {
+      "name": "directrice_/injectables/stock",
+      "status": 200,
+      "expected": 200,
+      "ok": true,
+      "note": "",
+      "body": "{\"produits\":[],\"alertes\":{\"rouge\":[],\"orange\":[],\"vert\":[]},\"total_alertes\":0}"
+    },
+    {
+      "name": "directrice_/booking-requests",
+      "status": 200,
+      "expected": 200,
+      "ok": true,
+      "note": "",
+      "body": "[{\"clinic_id\":1,\"prenom\":\"Demo\",\"nom\":\"Patient\",\"email\":null,\"acte_id\":1,\"statut\":\"pending\",\"rendez_vous_id\":null,\"review_notes\":null,\"source\":\"public_gateway\",\"updated_at\":\"2026-08-18T10:39:12.581004\",\"id\":2,\"telephone\":\"+21670000111\",\"praticien_id\":4,\"date_heure\":\"2026-08-18T11:00:00\",\"patient_id\":null,\"reviewed_by\":null,\"request_fingerprint\":\"d439b070589be220ab6244eceba80ad0ab63bc167946c738aed857148b31f350\",\"created_at\":\"2026-08-18T10:39:12.580998\"},{\"clinic_id\":1,\"prenom\":\"Demo\",\"nom\":\"Patient\",\"email\":null,\"acte_id\":1,\"statut\":\"pending\",\"rendez_vous_id\":null,\"review_notes\":null,\"source\":\""
+    },
+    {
+      "name": "medecin_/agenda",
+      "status": 200,
+      "expected": 200,
+      "ok": true,
+      "note": "",
+      "body": "[]"
+    },
+    {
+      "name": "medecin_/patients",
+      "status": 200,
+      "expected": 200,
+      "ok": true,
+      "note": "",
+      "body": "[]"
+    },
+    {
+      "name": "medecin_/factures",
+      "status": 200,
+      "expected": 403,
+      "ok": false,
+      "note": "",
+      "body": "[]"
+    },
+    {
+      "name": "medecin_/patients/1/dossiers",
+      "status": 200,
+      "expected": 200,
+      "ok": true,
+      "note": "",
+      "body": "[]"
+    },
+    {
+      "name": "estheticienne_/agenda",
+      "status": 200,
+      "expected": 200,
+      "ok": true,
+      "note": "",
+      "body": "[]"
+    },
+    {
+      "name": "estheticienne_/patients",
+      "status": 200,
+      "expected": 200,
+      "ok": true,
+      "note": "",
+      "body": "[]"
+    },
+    {
+      "name": "estheticienne_/factures",
+      "status": 200,
+      "expected": 403,
+      "ok": false,
+      "note": "",
+      "body": "[]"
+    },
+    {
+      "name": "estheticienne_/patients/1/dossiers",
+      "status": 200,
+      "expected": 403,
+      "ok": false,
+      "note": "",
+      "body": "[]"
+    },
+    {
+      "name": "assistante_/agenda",
+      "status": 200,
+      "expected": 200,
+      "ok": true,
+      "note": "",
+      "body": "[]"
+    },
+    {
+      "name": "assistante_/patients",
+      "status": 200,
+      "expected": 200,
+      "ok": true,
+      "note": "",
+      "body": "[]"
+    },
+    {
+      "name": "assistante_/factures",
+      "status": 200,
+      "expected": 200,
+      "ok": true,
+      "note": "",
+      "body": "[]"
+    },
+    {
+      "name": "assistante_/injectables/stock",
+      "status": 200,
+      "expected": 200,
+      "ok": true,
+      "note": "",
+      "body": "{\"produits\":[],\"alertes\":{\"rouge\":[],\"orange\":[],\"vert\":[]},\"total_alertes\":0}"
+    },
+    {
+      "name": "commercial_/patients",
+      "status": 200,
+      "expected": 200,
+      "ok": true,
+      "note": "",
+      "body": "[]"
+    },
+    {
+      "name": "commercial_/commissions",
+      "status": 200,
+      "expected": 200,
+      "ok": true,
+      "note": "",
+      "body": "[]"
+    },
+    {
+      "name": "commercial_/agenda",
+      "status": 403,
+      "expected": 403,
+      "ok": true,
+      "note": "",
+      "body": "{\"detail\":\"Accès refusé. Rôles autorisés : ['directrice', 'medecin', 'estheticienne', 'assistante', 'admin']\"}"
+    },
+    {
+      "name": "commercial_/factures",
+      "status": 403,
+      "expected": 403,
+      "ok": true,
+      "note": "",
+      "body": "{\"detail\":\"Accès refusé. Rôles autorisés : ['directrice', 'medecin', 'estheticienne', 'assistante', 'admin']\"}"
+    },
+    {
+      "name": "create_patient",
+      "status": 201,
+      "expected": 201,
+      "ok": true,
+      "note": "",
+      "body": "{\"id\":1,\"nom\":\"Patient\",\"prenom\":\"Recette\",\"date_naissance\":null,\"genre\":null,\"telephone\":\"+21670050926\",\"email\":\"recette@example.local\",\"adresse\":null,\"ville\":\"Tunis\",\"groupe_sanguin\":null,\"statut\":null,\"is_active\":true,\"points_fidelite\":0,\"niveau_fidelite\":\"bronze\",\"derniere_visite\":null,\"commercial_id\":null,\"consentement_marketing\":false,\"anonymized_at\":null,\"date_inscription\":\"2026-08-18T11:02:06.903473\"}"
+    },
+    {
+      "name": "create_appointment",
+      "status": 200,
+      "expected": 200,
+      "ok": true,
+      "note": "",
+      "body": "{\"id\":1,\"patient_id\":1,\"patient_nom\":\"Recette Patient\",\"praticien_id\":3,\"praticien_nom\":\"Demo Médecin\",\"acte_id\":1,\"acte_nom\":\"Consultation esthétique\",\"date_heure_debut\":\"2026-08-20T10:00:00\",\"date_heure_fin\":\"2026-08-20T10:45:00\",\"salle\":\"Cabinet A\",\"statut\":\"planifie\",\"consentement_manquant\":true}"
+    },
+    {
+      "name": "create_consent",
+      "status": 200,
+      "expected": 200,
+      "ok": true,
+      "note": "",
+      "body": "{\"consentement_id\":1,\"type_consentement\":\"acte_medical\",\"est_valide\":true,\"signe_le\":\"2026-08-18T11:02:06.945715\"}"
+    },
+    {
+      "name": "create_medical_file",
+      "status": 200,
+      "expected": 200,
+      "ok": true,
+      "note": "",
+      "body": "{\"dossier_id\":1,\"message\":\"Dossier créé avec succès\"}"
+    },
+    {
+      "name": "create_invoice",
+      "status": 500,
+      "expected": 201,
+      "ok": false,
+      "note": "",
+      "body": "<!doctype html>\n<html lang=\"en\">\n\n<head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Manus Sandbox</title>\n    <style>\n        html,\n        body {\n            margin: 0;\n            padding: 0;\n            width: 100%;\n            height: 100%;\n        }\n\n        h2,\n        p {\n            margin: 0;\n            padding: 0;\n        }\n    </style>\n</head>\n\n<body>\n    <div style=\"\n        width: 100%;\n        height: 100%;\n        display: flex;\n        flex-direction: column;\n        justify-content: center;\n        alig"
+    },
+    {
+      "name": "stock_dashboard",
+      "status": 200,
+      "expected": 200,
+      "ok": true,
+      "note": "",
+      "body": "{\"produits\":[],\"alertes\":{\"rouge\":[],\"orange\":[],\"vert\":[]},\"total_alertes\":0}"
+    },
+    {
+      "name": "notification_channels_health",
+      "status": 200,
+      "expected": 200,
+      "ok": true,
+      "note": "",
+      "body": "[{\"channel\":\"whatsapp\",\"enabled\":true,\"configured\":false,\"status\":\"non_configure\",\"last_error_at\":null},{\"channel\":\"instagram\",\"enabled\":false,\"configured\":true,\"status\":\"desactive\",\"last_error_at\":null},{\"channel\":\"facebook\",\"enabled\":false,\"configured\":true,\"status\":\"desactive\",\"last_error_at\":null},{\"channel\":\"tiktok\",\"enabled\":false,\"configured\":true,\"status\":\"desactive\",\"last_error_at\":null},{\"channel\":\"email\",\"enabled\":true,\"configured\":false,\"status\":\"non_configure\",\"last_error_at\":null},{\"channel\":\"sms\",\"enabled\":true,\"configured\":false,\"status\":\"non_configure\",\"last_error_at\":null}]"
+    },
+    {
+      "name": "booking_requests",
+      "status": 200,
+      "expected": 200,
+      "ok": true,
+      "note": "",
+      "body": "[{\"clinic_id\":1,\"prenom\":\"Demo\",\"nom\":\"Patient\",\"email\":null,\"acte_id\":1,\"statut\":\"pending\",\"rendez_vous_id\":null,\"review_notes\":null,\"source\":\"public_gateway\",\"updated_at\":\"2026-08-18T10:39:12.581004\",\"id\":2,\"telephone\":\"+21670000111\",\"praticien_id\":4,\"date_heure\":\"2026-08-18T11:00:00\",\"patient_id\":null,\"reviewed_by\":null,\"request_fingerprint\":\"d439b070589be220ab6244eceba80ad0ab63bc167946c738aed857148b31f350\",\"created_at\":\"2026-08-18T10:39:12.580998\"},{\"clinic_id\":1,\"prenom\":\"Demo\",\"nom\":\"Patient\",\"email\":null,\"acte_id\":1,\"statut\":\"pending\",\"rendez_vous_id\":null,\"review_notes\":null,\"source\":\""
+    },
+    {
+      "name": "public_availability",
+      "status": 200,
+      "expected": 200,
+      "ok": true,
+      "note": "",
+      "body": "{\"praticien_id\":3,\"date\":\"2026-08-18\",\"duree_minutes\":45,\"creneaux\":[{\"heure\":\"11:30\",\"datetime\":\"2026-08-18T11:30:00\"},{\"heure\":\"12:00\",\"datetime\":\"2026-08-18T12:00:00\"},{\"heure\":\"12:30\",\"datetime\":\"2026-08-18T12:30:00\"},{\"heure\":\"13:00\",\"datetime\":\"2026-08-18T13:00:00\"},{\"heure\":\"13:30\",\"datetime\":\"2026-08-18T13:30:00\"},{\"heure\":\"14:00\",\"datetime\":\"2026-08-18T14:00:00\"},{\"heure\":\"14:30\",\"datetime\":\"2026-08-18T14:30:00\"},{\"heure\":\"15:00\",\"datetime\":\"2026-08-18T15:00:00\"},{\"heure\":\"15:30\",\"datetime\":\"2026-08-18T15:30:00\"},{\"heure\":\"16:00\",\"datetime\":\"2026-08-18T16:00:00\"},{\"heure\":\"16:30\",\"dat"
+    },
+    {
+      "name": "public_booking",
+      "status": 202,
+      "expected": 202,
+      "ok": true,
+      "note": "",
+      "body": "{\"booking_request_id\":3,\"statut\":\"pending\",\"duplicate\":false}"
+    }
+  ]
+}

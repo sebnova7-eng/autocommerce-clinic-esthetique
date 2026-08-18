@@ -1,0 +1,102 @@
+{
+  "common": {
+    "welcome": "Benvenuto",
+    "logout": "Esci",
+    "login": "Accedi",
+    "dashboard": "Pannello di controllo",
+    "patients": "Pazienti",
+    "agenda": "Agenda",
+    "stock": "Inventario",
+    "invoices": "Fatture",
+    "settings": "Impostazioni",
+    "language": "Lingua",
+    "french": "Francese",
+    "english": "Inglese",
+    "italian": "Italiano",
+    "german": "Tedesco"
+  },
+  "auth": {
+    "email": "Email",
+    "password": "Password",
+    "loginButton": "Accedi",
+    "forgotPassword": "Password dimenticata",
+    "rememberMe": "Ricordami",
+    "mfaRequired": "Autenticazione a due fattori richiesta",
+    "mfaCode": "Codice di autenticazione"
+  },
+  "patients": {
+    "title": "Gestione Pazienti",
+    "addPatient": "Aggiungi Paziente",
+    "editPatient": "Modifica Paziente",
+    "deletePatient": "Elimina Paziente",
+    "name": "Cognome",
+    "firstName": "Nome",
+    "phone": "Telefono",
+    "email": "Email",
+    "city": "Città",
+    "loyaltyPoints": "Punti Fedeltà",
+    "loyaltyLevel": "Livello Fedeltà",
+    "medicalFile": "Cartella Clinica",
+    "consent": "Consenso",
+    "photos": "Foto"
+  },
+  "agenda": {
+    "title": "Agenda",
+    "appointment": "Appuntamento",
+    "practitioner": "Medico",
+    "date": "Data",
+    "time": "Ora",
+    "duration": "Durata",
+    "room": "Stanza",
+    "bookAppointment": "Prenota Appuntamento",
+    "cancelAppointment": "Annulla Appuntamento",
+    "reschedule": "Riprogramma"
+  },
+  "stock": {
+    "title": "Gestione Inventario",
+    "product": "Prodotto",
+    "quantity": "Quantità",
+    "expiryDate": "Data di Scadenza",
+    "alert": "Avviso",
+    "scanBarcode": "Scansiona Codice a Barre",
+    "addProduct": "Aggiungi Prodotto",
+    "lowStock": "Inventario Basso",
+    "expiringSoon": "In Scadenza Presto"
+  },
+  "invoices": {
+    "title": "Fatture",
+    "invoiceNumber": "Numero Fattura",
+    "date": "Data",
+    "amount": "Importo",
+    "status": "Stato",
+    "paid": "Pagata",
+    "pending": "In Sospeso",
+    "cancelled": "Annullata",
+    "generateInvoice": "Genera Fattura"
+  },
+  "dashboard": {
+    "title": "Pannello di controllo",
+    "overview": "Panoramica",
+    "revenue": "Ricavi",
+    "appointments": "Appuntamenti",
+    "patients": "Pazienti",
+    "performance": "Prestazioni"
+  },
+  "simulation": {
+    "title": "Simulazione Morphing IA",
+    "selectPhoto": "Seleziona Foto",
+    "selectZone": "Seleziona Zona",
+    "intensity": "Intensità",
+    "generate": "Genera",
+    "disclaimer": "Simulazione non vincolante"
+  },
+  "messages": {
+    "success": "Operazione riuscita",
+    "error": "Si è verificato un errore",
+    "loading": "Caricamento...",
+    "confirm": "Sei sicuro?",
+    "cancel": "Annulla",
+    "save": "Salva",
+    "delete": "Elimina"
+  }
+}

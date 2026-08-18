@@ -1,0 +1,3 @@
+4eebf2ce874f00571ff32d5681f7ac90dc9fc03b75b54da567dc206fd1d34765  autocommerce-app/client/src/pages/public/LandingPage.tsx
+646981697f9d5dc292e4c2eb26efbd1d052faf846df11979a7da5c752c867c9f  autocommerce-app/client/src/__tests__/landing-booking.test.tsx
+010bd6fb51fcd8d4b2a801b463da6b4765ddd3d3edbdbf3a6df398c3bcdb034f  release-evidence/landing_page_esthetique_real.webp

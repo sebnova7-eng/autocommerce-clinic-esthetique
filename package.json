@@ -1,0 +1,14 @@
+{
+  "name": "autocommerce-clinic-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "license": "MIT",
+  "packageManager": "pnpm@10.15.1",
+  "scripts": {
+    "install:ci": "pnpm install --frozen-lockfile",
+    "check:frontend": "pnpm --filter autocommerce-clinic-frontend check",
+    "test:frontend": "pnpm --filter autocommerce-clinic-frontend test",
+    "build:frontend": "pnpm --filter autocommerce-clinic-frontend build",
+    "release-check": "pnpm check:frontend && pnpm test:frontend && pnpm build:frontend"
+  }
+}

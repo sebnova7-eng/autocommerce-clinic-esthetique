@@ -1,0 +1,137 @@
+ROUTES
+39:      <Route path="/login" component={Login} />
+40:      <Route path="/mfa-verify">{() => <MfaVerification />}</Route>
+41:      <Route path="/settings/mfa">
+42:        <ProtectedRoute requiredRoles={['directrice', 'admin']}>
+46:      <Route path="/dashboard">
+51:      <Route path="/dashboard-ia">
+56:      <Route path="/workflows">
+57:        <ProtectedRoute requiredRoles={['directrice', 'admin']}>
+61:      <Route path="/copilote-crm">
+62:        <ProtectedRoute requiredRoles={['directrice', 'medecin', 'estheticienne', 'admin']}>
+66:      <Route path="/analytics">
+67:        <ProtectedRoute requiredRoles={['directrice', 'admin']}>
+71:      <Route path="/agenda">
+76:      <Route path="/patients">
+81:      <Route path="/patients/:id">
+83:          <ProtectedRoute requiredRoles={['directrice', 'medecin', 'estheticienne', 'admin']}>
+88:      <Route path="/stock">
+93:      <Route path="/invoices">
+98:      <Route path="/commissions">
+99:        <ProtectedRoute requiredRoles={['directrice', 'admin', 'commercial']}>
+103:      <Route path="/delegues">
+104:        <ProtectedRoute requiredRoles={['directrice', 'medecin', 'admin']}>
+108:      <Route path="/loyalty">
+113:      <Route path="/teleconsultation/:rdvId">
+115:          <ProtectedRoute requiredRoles={['directrice', 'medecin', 'admin']}>
+120:      <Route path="/recruitment">
+121:        <ProtectedRoute requiredRoles={['directrice', 'assistante', 'admin']}>
+125:      <Route path="/social">
+130:      <Route path="/equipe">
+135:      <Route path="/settings">
+136:        <ProtectedRoute requiredRoles={['directrice', 'admin']}>
+140:      <Route path="/settings/actes">
+141:        <ProtectedRoute requiredRoles={['directrice', 'admin']}>
+145:      <Route path="/" component={LandingPage} />
+146:      <Route path="/404" component={NotFound} />
+
+CONTEXTS
+client/src/contexts/AuthContext.tsx
+client/src/contexts/BrandingContext.tsx
+client/src/contexts/ThemeContext.tsx
+
+HOOKS
+client/src/hooks/useComposition.ts
+client/src/hooks/useMobile.tsx
+client/src/hooks/usePersistFn.ts
+client/src/hooks/useTranslations.ts
+
+API EXPORTS
+7:export const resolveApiUrl = (url?: string | null) => {
+13:export const normalizeBrandingResponse = (branding: BrandingResponse): BrandingResponse => ({
+18:export interface TokenResponse {
+24:export interface UserOut {
+34:export interface BrandingResponse {
+49:export interface PublicPraticien {
+58:export interface PublicActe {
+67:export interface PublicDisponibilite {
+72:export interface PublicDisponibilitesResponse {
+96:export const createApiClient = (): AxiosInstance => {
+167:export const api = createApiClient();
+170:export const publicApiClient = axios.create({
+177:export const setAccessToken = (access: string) => {
+181:export const getAccessToken = () => accessToken;
+183:export const clearTokens = () => {
+188:export const isAuthenticated = () => !!accessToken;
+196:export const setMfaChallengeToken = (token: string) => { mfaChallengeToken = token; };
+197:export const getMfaChallengeToken = () => mfaChallengeToken;
+198:export const clearMfaChallengeToken = () => { mfaChallengeToken = null; };
+200:export interface MfaStatusResponse {
+205:export interface MfaSetupResponse {
+212:export interface MfaChallengeResponse {
+218:export const authApi = {
+250:export const settingsApi = {
+273:export const publicApi = {
+291:export const photosApi = {
+325:export const dossierMedicalApi = {
+364:export interface EquipeMessage {
+380:export interface EquipeMessageCreate {
+386:export const equipeApi = {
+416:export const scribeIaApi = {
+
+PAGES
+client/src/pages/Home.tsx
+client/src/pages/NotFound.tsx
+client/src/pages/agenda/AgendaView.tsx
+client/src/pages/analytics/BusinessIntelligence.tsx
+client/src/pages/auth/Login.tsx
+client/src/pages/auth/MfaVerification.tsx
+client/src/pages/commissions/CommissionsPage.tsx
+client/src/pages/crm/CopiloteCRM.tsx
+client/src/pages/dashboard/Dashboard.tsx
+client/src/pages/dashboard/DashboardIA.tsx
+client/src/pages/delegues/DeleguesPage.tsx
+client/src/pages/equipe/EquipeMessages.tsx
+client/src/pages/invoices/InvoicesPage.tsx
+client/src/pages/loyalty/LoyaltyPage.tsx
+client/src/pages/loyalty/ParrainageSection.tsx
+client/src/pages/patients/MedicalFile.tsx
+client/src/pages/patients/PatientsList.tsx
+client/src/pages/public/LandingPage.tsx
+client/src/pages/recruitment/RecruitmentPage.tsx
+client/src/pages/settings/ActesPage.tsx
+client/src/pages/settings/MfaSettings.tsx
+client/src/pages/settings/SettingsPage.tsx
+client/src/pages/social/SocialPage.tsx
+client/src/pages/stock/StockPage.tsx
+client/src/pages/teleconsultation/TeleconsultationPage.tsx
+client/src/pages/workflow/WorkflowEngine.tsx
+
+PAGE API USAGE
+client/src/components/patients/PatientAutocomplete.tsx: 
+client/src/components/patients/PatientFormDialog.tsx: 
+client/src/components/stock/ConsommableForm.tsx: 
+client/src/components/stock/ConsommablesList.tsx: 
+client/src/components/ui/carousel.tsx: CarouselApi setApi 
+client/src/pages/agenda/AgendaView.tsx: publicApi 
+client/src/pages/analytics/BusinessIntelligence.tsx: 
+client/src/pages/commissions/CommissionsPage.tsx: 
+client/src/pages/crm/CopiloteCRM.tsx: 
+client/src/pages/dashboard/Dashboard.tsx: 
+client/src/pages/dashboard/DashboardIA.tsx: 
+client/src/pages/delegues/DeleguesPage.tsx: 
+client/src/pages/equipe/EquipeMessages.tsx: authApi equipeApi 
+client/src/pages/invoices/InvoicesPage.tsx: 
+client/src/pages/loyalty/LoyaltyPage.tsx: 
+client/src/pages/loyalty/ParrainageSection.tsx: 
+client/src/pages/patients/MedicalFile.tsx: dossierMedicalApi photosApi publicApi scribeIaApi 
+client/src/pages/patients/PatientsList.tsx: 
+client/src/pages/public/LandingPage.tsx: publicApi 
+client/src/pages/recruitment/RecruitmentPage.tsx: 
+client/src/pages/settings/ActesPage.tsx: 
+client/src/pages/settings/MfaSettings.tsx: authApi 
+client/src/pages/settings/SettingsPage.tsx: settingsApi 
+client/src/pages/social/SocialPage.tsx: 
+client/src/pages/stock/StockPage.tsx: 
+client/src/pages/teleconsultation/TeleconsultationPage.tsx: 
+client/src/pages/workflow/WorkflowEngine.tsx: 

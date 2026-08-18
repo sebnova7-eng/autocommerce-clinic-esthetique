@@ -1,0 +1,77 @@
+{
+  "campaign": "redis_shared_multi_process",
+  "started_at": "2026-08-17T22:37:28.698942+00:00",
+  "redis_url_host": "127.0.0.1:6379",
+  "process_count": 2,
+  "quota_clinic_requests": 1,
+  "clinics": [
+    1,
+    2
+  ],
+  "results": [
+    {
+      "worker": "worker-1",
+      "clinic_id": 1,
+      "phase": "shared-quota",
+      "status": "429",
+      "detail": "Quota IA dépassée",
+      "elapsed_ms": 3.1,
+      "timestamp": "2026-08-17T22:37:29.578757+00:00"
+    },
+    {
+      "worker": "worker-2",
+      "clinic_id": 1,
+      "phase": "shared-quota",
+      "status": "PASS",
+      "elapsed_ms": 2.55,
+      "timestamp": "2026-08-17T22:37:29.578205+00:00"
+    },
+    {
+      "worker": "worker-1",
+      "clinic_id": 2,
+      "phase": "shared-quota",
+      "status": "429",
+      "detail": "Quota IA dépassée",
+      "elapsed_ms": 2.67,
+      "timestamp": "2026-08-17T22:37:29.578942+00:00"
+    },
+    {
+      "worker": "worker-2",
+      "clinic_id": 2,
+      "phase": "shared-quota",
+      "status": "PASS",
+      "elapsed_ms": 2.0,
+      "timestamp": "2026-08-17T22:37:29.578250+00:00"
+    }
+  ],
+  "by_clinic": {
+    "1": {
+      "pass": 1,
+      "429": 1,
+      "error": 0
+    },
+    "2": {
+      "pass": 1,
+      "429": 1,
+      "error": 0
+    }
+  },
+  "redis_clinic_request_keys": {
+    "llm:req:clinic_2_redis-campaign_shared-quota_worker-1:2026-08-17": 0,
+    "llm:req:clinic_1_redis-campaign_shared-quota_worker-1:2026-08-17": 0,
+    "llm:req:clinic_2:2026-08-17": 1,
+    "llm:req:clinic_1:2026-08-17": 1,
+    "llm:req:clinic_2_redis-campaign_shared-quota_worker-2:2026-08-17": 1,
+    "llm:req:clinic_1_redis-campaign_shared-quota_worker-2:2026-08-17": 1
+  },
+  "process_exit_codes": {
+    "SpawnProcess-1": 0,
+    "SpawnProcess-2": 0
+  },
+  "assertions": {
+    "two_processes_clean_exit": true,
+    "one_pass_per_clinic": true,
+    "one_429_per_clinic": true,
+    "no_process_errors": true
+  }
+}

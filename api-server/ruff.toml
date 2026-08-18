@@ -1,0 +1,10 @@
+# AutoCommerce Clinic lint policy.
+# E402 is intentionally ignored because a small set of modules perform
+# bootstrap/path setup before importing application modules. All other Ruff
+# diagnostics remain blocking and are fixed in source or tests.
+target-version = "py312"
+line-length = 100
+exclude = [".venv", "*.venv", ".audit-venv", ".ready-venv", "__pycache__"]
+
+[lint]
+ignore = ["E402"]

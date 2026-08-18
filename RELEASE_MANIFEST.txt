@@ -1,0 +1,21 @@
+AutoCommerce Clinic Enterprise
+Commercial Production Release
+2026-08-17
+
+Release status: GO — COMMERCIAL PRODUCTION RELEASE
+Release gate: FINAL_RELEASE_GATE.log — EXIT 0
+Backend: 515 passed, 1 skipped
+AI security: 14 passed
+Full stack: PASS
+Alembic head: c9d0e1f2a3b4
+Public domains: app.autocommerce-clinic.com, pub.api.autocommerce-clinic.com
+Private domains: clinic.autocommerce-clinic.local, api.autocommerce-clinic.com
+Public API: /api/public
+Private API: /api/private
+Legacy private compatibility: /api/v1
+Database: PostgreSQL internal only
+Broker: Redis internal only
+Package: AutoCommerce-Clinic-Enterprise-Commercial-Production-Ready-FINAL-2026-08-17.zip
+Checksum: SHA256SUMS.txt
+Evidence: RELEASE_EVIDENCE_FINAL.md
+Report: FINAL_COMMERCIAL_RELEASE_REPORT.md

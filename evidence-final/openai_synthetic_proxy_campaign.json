@@ -1,0 +1,49 @@
+{
+  "timestamp": "2026-08-17T22:39:38.066968+00:00",
+  "status": "PROVIDER_PASS",
+  "provider": "openai-compatible",
+  "base_url_host": "api.manus.im",
+  "endpoint": "https://api.manus.im/api/llm-proxy/v1/chat/completions",
+  "model": "gpt-5-mini",
+  "synthetic_only": true,
+  "phi_present": false,
+  "patient_id_present": false,
+  "request_parameters": {
+    "temperature": 0.0,
+    "max_completion_tokens": 16,
+    "stream": false
+  },
+  "message_roles": [
+    "system",
+    "user"
+  ],
+  "message_character_counts": [
+    53,
+    44
+  ],
+  "message_sha256": "1aa4e56927508bd66b4bef5ca3a33fe5275ea3dbd69316b1fa514f7437a2569e",
+  "response_character_count": 12,
+  "response_sha256": "83f580fdf1bf331ee5b07f0563e3456af09901467dbef67051cf59793356dc7d",
+  "latency_ms": 2264.0,
+  "usage": {
+    "completion_tokens": 79,
+    "prompt_tokens": 29,
+    "total_tokens": 108,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": 0,
+      "audio_tokens": null,
+      "reasoning_tokens": 64,
+      "rejected_prediction_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": null,
+      "cached_tokens": null
+    }
+  },
+  "quota_check": {
+    "status": "PASS_429",
+    "detail": "Quota IA dépassée",
+    "clinic_id": 9982,
+    "limit": 1
+  }
+}

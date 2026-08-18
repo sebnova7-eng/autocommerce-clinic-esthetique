@@ -1,0 +1,52 @@
+{
+  "login": 200,
+  "requests_status": 200,
+  "pending_count": 3,
+  "approve_status": 200,
+  "approve_body": "{\"booking_request_id\":1,\"statut\":\"accepted\",\"rendez_vous_id\":2,\"patient_id\":2,\"consentement_a_signer_sur_place\":true}",
+  "channels_status": 200,
+  "channels": [
+    {
+      "channel": "whatsapp",
+      "enabled": true,
+      "configured": false,
+      "status": "non_configure",
+      "last_error_at": null
+    },
+    {
+      "channel": "instagram",
+      "enabled": false,
+      "configured": true,
+      "status": "desactive",
+      "last_error_at": null
+    },
+    {
+      "channel": "facebook",
+      "enabled": false,
+      "configured": true,
+      "status": "desactive",
+      "last_error_at": null
+    },
+    {
+      "channel": "tiktok",
+      "enabled": false,
+      "configured": true,
+      "status": "desactive",
+      "last_error_at": null
+    },
+    {
+      "channel": "email",
+      "enabled": true,
+      "configured": false,
+      "status": "non_configure",
+      "last_error_at": null
+    },
+    {
+      "channel": "sms",
+      "enabled": true,
+      "configured": false,
+      "status": "non_configure",
+      "last_error_at": null
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "login_status": 200,
+  "create_status": 201,
+  "create_body": "{\"id\":1,\"numero_facture\":\"F-2026-0001\",\"total_ttc\":95.2,\"statut\":\"brouillon\"}",
+  "payment_status": 200,
+  "payment_body": "{\"statut\":\"payee\",\"commission_generee\":false,\"points_gagnes\":9}"
+}
