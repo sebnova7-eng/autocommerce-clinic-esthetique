@@ -1067,8 +1067,11 @@ class EquipeMessage(Base):
 # ═══════════════════════════════════════════════════════════
 
 def get_async_engine(database_url: str):
-    """Retourne le moteur async SQLAlchemy."""
-    return create_async_engine(database_url, echo=False, future=True)
+    """Retourne le moteur async SQLAlchemy avec nettoyage des guillemets et forçage asyncpg."""
+    url = (database_url or "").strip().strip('"\'')
+    if url.startswith("postgresql://") and "+asyncpg" not in url:
+        url = url.replace("postgresql://", "postgresql+asyncpg://", 1)
+    return create_async_engine(url, echo=False, future=True)
 
 
 def get_async_sessionmaker(engine):
