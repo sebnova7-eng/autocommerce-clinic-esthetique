@@ -1,0 +1,5 @@
+[build]
+installCommand = "pip install -r requirements.txt"
+
+[start]
+command = "./start.sh"
