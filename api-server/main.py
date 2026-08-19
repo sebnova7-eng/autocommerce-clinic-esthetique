@@ -39,8 +39,13 @@ async def lifespan(app: FastAPI):
             from bootstrap_admin import _bootstrap_from_environment
             await asyncio.to_thread(_bootstrap_from_environment)
         except Exception:
-            logging.getLogger(__name__).exception("Admin bootstrap failed during startup")
-            raise
+            # Le seed ne doit pas rendre l'application indisponible : l'admin
+            # pourra être créé lors d'un redémarrage ultérieur après correction
+            # de la dépendance concernée.
+            logging.getLogger(__name__).warning(
+                "Admin bootstrap failed during startup; continuing without seed",
+                exc_info=True,
+            )
     yield
     await dispose_engine()
 
