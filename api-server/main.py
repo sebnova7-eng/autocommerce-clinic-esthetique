@@ -8,6 +8,9 @@ proprement le pool de connexions DB à l'arrêt.
 """
 from contextlib import asynccontextmanager
 from pathlib import Path
+import asyncio
+import logging
+import os
 
 from fastapi import FastAPI, Depends
 from fastapi.responses import FileResponse, JSONResponse
@@ -28,6 +31,16 @@ from models.database import RoleEnum
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
+    # Railway utilise actuellement une commande uvicorn personnalisée. Le seed
+    # est donc exécuté ici en complément de start.sh afin de rester fiable
+    # quelle que soit la commande de démarrage active.
+    if os.getenv("BOOTSTRAP_ADMIN_EMAIL") or os.getenv("BOOTSTRAP_ADMIN_PASSWORD"):
+        try:
+            from bootstrap_admin import _bootstrap_from_environment
+            await asyncio.to_thread(_bootstrap_from_environment)
+        except Exception:
+            logging.getLogger(__name__).exception("Admin bootstrap failed during startup")
+            raise
     yield
     await dispose_engine()
 

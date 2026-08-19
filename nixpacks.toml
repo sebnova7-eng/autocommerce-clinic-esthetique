@@ -1,8 +1,0 @@
-[phases.setup]
-nixPkgs = ["python311", "gcc"]
-
-[phases.install]
-cmds = ["pip install --no-cache-dir -r api-server/requirements.txt"]
-
-[start]
-cmd = "cd api-server && bash start.sh"
