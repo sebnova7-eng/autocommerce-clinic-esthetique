@@ -7,9 +7,10 @@ Docker de docker-compose.clinic.yml), configure CORS, et ferme
 proprement le pool de connexions DB à l'arrêt.
 """
 from contextlib import asynccontextmanager
+from pathlib import Path
 
 from fastapi import FastAPI, Depends
-from fastapi.responses import JSONResponse
+from fastapi.responses import FileResponse, JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import Response
@@ -108,6 +109,22 @@ def create_app() -> FastAPI:
         Instrumentator().instrument(app)
     except Exception:
         pass  # Prometheus non critique
+
+    # En production, le build React est copié dans api-server/web-dist.
+    # Le frontend et l'API sont ainsi servis par la même URL Railway.
+    frontend_dir = Path(__file__).resolve().parent / "web-dist"
+    frontend_root = frontend_dir.resolve()
+    if frontend_root.is_dir() and (frontend_root / "index.html").is_file():
+        assets_dir = frontend_root / "assets"
+        if assets_dir.is_dir():
+            app.mount("/assets", StaticFiles(directory=str(assets_dir)), name="frontend-assets")
+
+        @app.get("/{full_path:path}", include_in_schema=False)
+        async def frontend_spa(full_path: str):
+            requested = (frontend_root / full_path).resolve()
+            if requested.is_file() and frontend_root in requested.parents:
+                return FileResponse(requested)
+            return FileResponse(frontend_root / "index.html")
 
     return app
 

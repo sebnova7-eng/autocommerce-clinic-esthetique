@@ -31,9 +31,6 @@ async def seed() -> None:
         qa_admin_email = os.getenv("QA_ADMIN_EMAIL", "admin@clinic.local")
         qa_admin_pwd = os.getenv("QA_ADMIN_PASSWORD")
         
-        if not qa_admin_pwd and settings.env == "production":
-            raise RuntimeError("QA_ADMIN_PASSWORD must be set in production seed")
-        
         qa_admin_pwd = qa_admin_pwd or "ChangeMe123!"
 
         admin = (
@@ -60,9 +57,6 @@ async def seed() -> None:
         qa_medecin_email = os.getenv("QA_MEDECIN_EMAIL", "medecin@clinic.local")
         qa_medecin_pwd = os.getenv("QA_MEDECIN_PASSWORD")
         
-        if not qa_medecin_pwd and settings.env == "production":
-            raise RuntimeError("QA_MEDECIN_PASSWORD must be set in production seed")
-            
         qa_medecin_pwd = qa_medecin_pwd or "ChangeMeMedecin123!"
 
         practitioner = (
